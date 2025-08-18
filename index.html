@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student Grade Calculator</title>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>📚 Student Grade Calculator</h1>
+        <p>Enter your subject scores to calculate your overall grade</p>
+      </header>
+
+      <div class="calculator-card">
+        <form class="grade-form">
+          <div class="input-group">
+            <label for="math">Mathematics:</label>
+            <input type="number" id="math" min="0" max="100" placeholder="Enter score (0-100)">
+          </div>
+
+          <div class="input-group">
+            <label for="english">English:</label>
+            <input type="number" id="english" min="0" max="100" placeholder="Enter score (0-100)">
+          </div>
+
+          <div class="input-group">
+            <label for="science">Science:</label>
+            <input type="number" id="science" min="0" max="100" placeholder="Enter score (0-100)">
+          </div>
+
+          <div class="input-group">
+            <label for="history">History:</label>
+            <input type="number" id="history" min="0" max="100" placeholder="Enter score (0-100)">
+          </div>
+
+          <div class="input-group">
+            <label for="art">Art:</label>
+            <input type="number" id="art" min="0" max="100" placeholder="Enter score (0-100)">
+          </div>
+
+          <button type="button" onclick="calculateGrade()" class="calculate-btn">
+            Calculate My Grade
+          </button>
+        </form>
+
+        <div id="results" class="results-section">
+          <!-- Results will be displayed here -->
+        </div>
+      </div>
+    </div>
+
+    <script src="/main.js"></script>
+  </body>
+</html>
