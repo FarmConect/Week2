@@ -1,7 +1,7 @@
 // Initialize empty array to store scores - Week 2 concept: Arrays
 let scores = [];
 
-// Function to calculate grade - keeping it simple for Week 2
+// Function to calculate grade - Week 2
 function calculateGrade() {
     // Clear the scores array for fresh calculation
     scores = [];
@@ -15,7 +15,7 @@ function calculateGrade() {
     
     // Check if all fields have values - Week 2 concept: comparison operators
     if (mathScore === '' || englishScore === '' || scienceScore === '' || historyScore === '' || artScore === '') {
-        alert('Please enter all subject scores!');
+        console.log('⚠️ Please enter all subject scores!');
         return;
     }
     
@@ -30,7 +30,7 @@ function calculateGrade() {
     if (mathNum < 0 || mathNum > 100 || englishNum < 0 || englishNum > 100 || 
         scienceNum < 0 || scienceNum > 100 || historyNum < 0 || historyNum > 100 || 
         artNum < 0 || artNum > 100) {
-        alert('Please enter scores between 0 and 100!');
+        console.log('⚠️ Please enter scores between 0 and 100!');
         return;
     }
     
@@ -41,51 +41,34 @@ function calculateGrade() {
     scores.push(historyNum);
     scores.push(artNum);
     
-    // Calculate average manually (no loops allowed) - Week 2 concept: arithmetic operators
+    // Calculate average manually (no loops yet) - Week 2 concept: arithmetic operators
     let total = scores[0] + scores[1] + scores[2] + scores[3] + scores[4];
     let average = total / scores.length;
     
     // Determine letter grade - Week 2 concept: comparison operators
     let letterGrade = '';
-    let gradeClass = '';
-    
     if (average >= 90) {
         letterGrade = 'A';
-        gradeClass = 'grade-a';
     } else if (average >= 80) {
         letterGrade = 'B';
-        gradeClass = 'grade-b';
     } else if (average >= 70) {
         letterGrade = 'C';
-        gradeClass = 'grade-c';
     } else if (average >= 60) {
         letterGrade = 'D';
-        gradeClass = 'grade-d';
     } else {
         letterGrade = 'F';
-        gradeClass = 'grade-f';
     }
     
-    // Display results - Week 2 concept: DOM manipulation, template literals
-    let resultsDiv = document.getElementById('results');
-    resultsDiv.innerHTML = `
-        <div class="average-display">
-            Your Average Score: ${average.toFixed(1)}%
-        </div>
-        <div class="grade-display ${gradeClass}">
-            Grade: ${letterGrade}
-        </div>
-        <div class="scores-list">
-            <h3>📝 Your Subject Scores:</h3>
-            <p>Mathematics: ${scores[0]}</p>
-            <p>English: ${scores[1]}</p>
-            <p>Science: ${scores[2]}</p>
-            <p>History: ${scores[3]}</p>
-            <p>Art: ${scores[4]}</p>
-            <p><strong>Total Subjects: ${scores.length}</strong></p>
-        </div>
-    `;
-    
-    // Show results section
-    resultsDiv.classList.add('show');
+    // ✅ Output to console instead of DOM
+    console.log("📊 --- Grade Report ---");
+    console.log("Mathematics: " + scores[0]);
+    console.log("English: " + scores[1]);
+    console.log("Science: " + scores[2]);
+    console.log("History: " + scores[3]);
+    console.log("Art: " + scores[4]);
+    console.log("----------------------");
+    console.log("Total Subjects: " + scores.length);
+    console.log("Average Score: " + average.toFixed(1) + "%");
+    console.log("Final Grade: " + letterGrade);
+    console.log("----------------------");
 }
